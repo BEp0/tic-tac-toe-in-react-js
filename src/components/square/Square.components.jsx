@@ -1,14 +1,18 @@
+import { useState } from "react"
 
-export function Square({value, player, handClick}) {
+export function Square({value, onClick}) {
 
-    function click(i){
-        if(!value){
-            handClick(i)
-        }
+    function handleClick() {
+        onClick()
+        // setCurrentState({valueState : "X"})
+        // handleAlterPlayer()
     }
 
     return (
-        <button className="square" onClick={() => click(value)}>
+        <button 
+            className="square" 
+            onClick={handleClick}
+        >
             {value}
         </button>
     )
